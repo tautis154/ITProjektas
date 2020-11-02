@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}resultatai{% endblock %}
+
+{% block body %}
+    <body class="bc-index">
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 550px; width: 100%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="example-wrapper">
+        <div class="page-back">
+        </div>
+        <div class="limiter">
+            <div class="container-table">
+                <div class="wrap-table">
+                    {% if specialists|length == 0 %}
+                        <div class="wrap-results-error">
+                            <h3 class="search-error-header">Atsiprašome, nepavyko rasti specialistų.</h3>
+                        </div>
+                    {% else %}
+                        <div class="table">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Gyd. Vardas</th>
+                                    <th>Specialybe</th>
+                                    <th>Istaiga</th>
+                                    <th>Gatve</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for specialist in specialists %}
+                                <tr>
+                                    <td> <a href="{{ path('specialist', {'id': specialist.getId() }) }}">{{ specialist.getFirstName() }}</a></td>
+                                    <td> {{ specialist.getDoctorSpecialties.first().getFkSpecialty().getName() }}</td>
+                                    <td>{{ specialist.getFkOffice().getName() }}</td>
+                                    <td>{{ specialist.getFkOffice().getStreet() }}</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+
+
+
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="page-forward">
+    </div>
+    </div>
+
+    </body>
+{% endblock %}
+{% block footer %}
+    <style>
+
+        .footer {position:absolute;bottom:0;width:100%;height:55px}
+        .color {color : blue; text-align: center}
+    </style>
+    <footer>
+        <div class=" footer   bg-dark">
+            {% if app.user %}
+                <div>
+                    {% if mostAppointed is defined %}
+                        <div>
+                            <h1 class="color">
+                                Daugiausia aptarnavo:
+                                {% if mostAppointed.0.getHowManyAppointed != 0%}
+                                    {% for specialist in mostAppointed %}
+                                        {{ specialist.getFirstName() }} - {{ specialist.getHowManyAppointed }}
+                                    {% endfor %}
+                                {% else %}
+                                    Visi - 0
+                                {% endif %}
+                            </h1>
+                        </div>
+                    {% endif %}
+
+                </div>
+            {% endif %}
+        </div>
+    </footer>
+{% endblock %}

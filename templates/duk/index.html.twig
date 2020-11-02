@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DUKController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Sveiki! ✅</h1>
+
+
+    <ul>
+        <li>Cia informacija apie musu DUK</li>
+        <li>Dar nieko nera</li>
+    </ul>
+</div>
+{% endblock %}
+{% block footer %}
+    <style>
+
+        .footer {position:absolute;bottom:0;width:100%;height:55px}
+        .color {color : blue; text-align: center}
+    </style>
+    <footer>
+        <div class=" footer   bg-dark">
+            {% if app.user %}
+                <div>
+                    {% if mostAppointed is defined %}
+                        <div>
+                            <h1 class="color">
+                                Daugiausia aptarnavo:
+                                {% if mostAppointed.0.getHowManyAppointed != 0%}
+                                    {% for specialist in mostAppointed %}
+                                        {{ specialist.getFirstName() }} - {{ specialist.getHowManyAppointed }}
+                                    {% endfor %}
+                                {% else %}
+                                    Visi - 0
+                                {% endif %}
+                            </h1>
+                        </div>
+                    {% endif %}
+
+                </div>
+            {% endif %}
+        </div>
+    </footer>
+{% endblock %}

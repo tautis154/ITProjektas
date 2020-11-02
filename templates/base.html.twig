@@ -1,12 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% endblock %}
+</head>
+{% block header %}
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container">
+
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('home') }}">Pradinis</a>
+                        </li>
+
+                        {% if app.user %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('specialist_settings') }}">Specialisto nustatymai</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_logout') }}">Atsijungti</a>
+                            </li>
+                            <li class="nav-item">
+                                <h4 class=nav-link">{{ app.user.username }}</h4>
+                            </li>
+
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_login') }}">Prisijungti</a>
+                            </li>
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('duk') }}">D.U.K</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+{% endblock %}
+{% block flash_messages %}
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="alert alert-{{ type }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">{% trans %}Close{% endtrans %}</span></button>
+                {{ message | raw }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
+<body>
+{% block body %}{% endblock %}
+{% block footer %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .footer {
+            position:absolute;
+            bottom:0;
+            width:100%;
+            height:60px;   /* Height of the footer */
+
+        }
+        .color {color : blue; text-align: center}
+    </style>
+    {% endblock %}
+
+</body>
 </html>

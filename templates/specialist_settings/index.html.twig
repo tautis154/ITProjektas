@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello SpecialistSettingsController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Mano teigiamos paslaugos</h1>
+    {% if allSpecialties is defined %}
+        <div>
+    {% for specialty in allSpecialties %}
+
+        <span class="w3-tag w3-padding-8 w3-round-large w3-green w3-center">{{ specialty.getFkSpecialty().getName() }}
+        </span>
+
+
+
+    {% endfor %}
+        </div>
+    {% endif %}
+    <br>
+
+    {{ form_start(form) }}
+    {{ form_widget(form.specialties) }}
+
+    {{ form_widget(form.submit, {'attr':
+        {'class': 'search-button', 'label': 'Pridėti'}}
+    ) }}
+    {{ form_end(form) }}
+
+</div>
+{% endblock %}
+
+{% block footer %}
+    <style>
+
+        .footer {position:absolute;bottom:0;width:100%;height:55px}
+        .color {color : blue; text-align: center}
+    </style>
+    <footer>
+        <div class=" footer   bg-dark">
+            {% if app.user %}
+                <div>
+                    {% if mostAppointed is defined %}
+                        <div>
+                            <h1 class="color">
+                                Daugiausia aptarnavo:
+                                {% if mostAppointed.0.getHowManyAppointed != 0%}
+                                    {% for specialist in mostAppointed %}
+                                        {{ specialist.getFirstName() }} - {{ specialist.getHowManyAppointed }}
+                                    {% endfor %}
+                                {% else %}
+                                    Visi - 0
+                                {% endif %}
+                            </h1>
+                        </div>
+                    {% endif %}
+
+                </div>
+            {% endif %}
+        </div>
+    </footer>
+{% endblock %}
