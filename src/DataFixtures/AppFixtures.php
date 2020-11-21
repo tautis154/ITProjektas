@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Day;
 use App\Entity\DoctorSpecialty;
 use App\Entity\Office;
 use App\Entity\Specialist;
@@ -80,7 +81,29 @@ class AppFixtures extends Fixture
         $manager->persist($specialist);
 
 
+        $day = new Day();
+        $day->setName('Pirmadienis');
+        $manager->persist($day);
+
+        $day = new Day();
+        $day->setName('Antradienis');
+        $manager->persist($day);
+
+        $day = new Day();
+        $day->setName('Treciadienis');
+        $manager->persist($day);
+
+        $day = new Day();
+        $day->setName('Ketvirtadienis');
+        $manager->persist($day);
+
+        $day = new Day();
+        $day->setName('Penktadienis');
+        $manager->persist($day);
+
+
         $manager->flush();
+
 
 
     }

@@ -25,13 +25,23 @@ class Customer
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $identityId;
+    private $lastName;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $message;
 
     /**
      * @ORM\ManyToOne(targetEntity=Specialist::class, inversedBy="customers")
      * @ORM\JoinColumn(nullable=false)
      */
     private $fk_specialist;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $appointedTime;
 
     public function getId(): ?int
     {
@@ -50,14 +60,26 @@ class Customer
         return $this;
     }
 
-    public function getIdentityId(): ?string
+    public function getLastName(): ?string
     {
-        return $this->identityId;
+        return $this->lastName;
     }
 
-    public function setIdentityId(string $identityId): self
+    public function setLastName(string $lastName): self
     {
-        $this->identityId = $identityId;
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+    public function setMessage(string $message): self
+    {
+        $this->message = $message;
 
         return $this;
     }
@@ -70,6 +92,18 @@ class Customer
     public function setFkSpecialist(?Specialist $fk_specialist): self
     {
         $this->fk_specialist = $fk_specialist;
+
+        return $this;
+    }
+
+    public function getAppointedTime(): ?\DateTimeInterface
+    {
+        return $this->appointedTime;
+    }
+
+    public function setAppointedTime(\DateTimeInterface $appointedTime): self
+    {
+        $this->appointedTime = $appointedTime;
 
         return $this;
     }

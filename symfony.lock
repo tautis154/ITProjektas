@@ -93,6 +93,15 @@
     "doctrine/sql-formatter": {
         "version": "1.1.1"
     },
+    "easycorp/easyadmin-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "b131e6cbfe1b898a508987851963fff485986285"
+        }
+    },
     "egulias/email-validator": {
         "version": "2.1.22"
     },
@@ -102,8 +111,14 @@
     "knplabs/knp-paginator-bundle": {
         "version": "v5.3.0"
     },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.1.1"
+    },
     "monolog/monolog": {
         "version": "2.1.1"
+    },
+    "nesbot/carbon": {
+        "version": "2.41.5"
     },
     "nikic/php-parser": {
         "version": "v4.10.2"
@@ -112,7 +127,7 @@
         "version": "2.2.3"
     },
     "php": {
-        "version": "7.3"
+        "version": "7.4"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
@@ -374,6 +389,9 @@
     "symfony/polyfill-php80": {
         "version": "v1.20.0"
     },
+    "symfony/polyfill-uuid": {
+        "version": "v1.20.0"
+    },
     "symfony/process": {
         "version": "v5.1.8"
     },
@@ -478,6 +496,9 @@
     "symfony/twig-pack": {
         "version": "v1.0.2"
     },
+    "symfony/uid": {
+        "version": "v5.1.8"
+    },
     "symfony/validator": {
         "version": "4.3",
         "recipe": {
@@ -522,6 +543,9 @@
     },
     "twig/twig": {
         "version": "v3.1.1"
+    },
+    "webimpress/safe-writer": {
+        "version": "2.1.0"
     },
     "webmozart/assert": {
         "version": "1.9.1"

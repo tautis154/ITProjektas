@@ -33,7 +33,39 @@
     ) }}
     {{ form_end(form) }}
 
+    <form action="{{ path('specialist_settings') }}" method="POST">
+
+        <div class="row">
+            {% for day in workDayList %}
+                <div class="col-md-2">
+                    <label> {{ day }} </label>
+                    <div class="row">
+                        <label class="ml-3"> Pradžios laikas </label>
+                        <input type="text" class="form-control ml-3 specialist-hours-input" name="day[{{ loop.index }}][startTime]"
+                               value="{{ specialist_service.getWorkHoursTime(
+                                    userId , loop.index, 'start'
+                               ) }}"
+                               placeholder="00:00">
+                    </div>
+                    <div class="row">
+                        <label class="ml-3"> Pabaigos laikas </label>
+                        <input type="text" class="form-control ml-3 specialist-hours-input" name="day[{{ loop.index }}][endTime]"
+                               value="{{ specialist_service.getWorkHoursTime(
+                                   userId , loop.index, 'end'
+                               ) }}"
+                               placeholder="23:00">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class=" row">
+            <button type="submit" class="btn btn-margin ml-3"> Išsaugoti</button>
+        </div>
+    </form>
+
+
 </div>
+
 {% endblock %}
 
 {% block footer %}

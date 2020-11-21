@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Customer;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -17,6 +18,56 @@ class CustomerRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Customer::class);
+    }
+
+    /**
+     * @param DateTime $date
+     * @param int $specialistId
+     * @return array|object[]
+     */
+    public function checkIfWorkHourExists(DateTime $date, int $specialistId)
+    {
+        return $this->getEntityManager()->getRepository(Customer::class)
+            ->findBy([
+                'fk_specialist' => $specialistId,
+                'appointedTime' => $date,
+            ]);
+    }
+
+    public function findByDate($id, $date){
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = "
+        select  * 
+        from customer
+        where customer.fk_specialist_id = :id AND CAST(customer.appointed_time as DATE) = :date
+
+        ";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['id' => $id,
+            'date'=>$date]);
+        $stmt->execute();
+
+        return $stmt->fetchAllAssociative();
+    }
+
+    public function findByGreaterDate($id, $date){
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = "
+        select  * 
+        from customer
+        where customer.fk_specialist_id = :id AND customer.appointed_time  > :date
+        ORDER BY customer.appointed_time ASC 
+        LIMIT 1
+        
+        ";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['id' => $id,
+            'date'=>$date]);
+        $stmt->execute();
+
+        return $stmt->fetchAllAssociative();
     }
 
     // /**

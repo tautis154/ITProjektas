@@ -62,10 +62,16 @@ class Specialist implements UserInterface
      */
     private $howManyAppointed;
 
+    /**
+     * @ORM\OneToMany(targetEntity=DoctorWorkTime::class, mappedBy="fk_specialist")
+     */
+    private $doctorWorkTimes;
+
     public function __construct()
     {
         $this->customers = new ArrayCollection();
         $this->doctorSpecialties = new ArrayCollection();
+        $this->doctorWorkTimes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -233,6 +239,41 @@ class Specialist implements UserInterface
     public function setHowManyAppointed(?int $howManyAppointed): self
     {
         $this->howManyAppointed = $howManyAppointed;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * @return Collection|DoctorWorkTime[]
+     */
+    public function getDoctorWorkTimes(): Collection
+    {
+        return $this->doctorWorkTimes;
+    }
+
+    public function addDoctorWorkTime(DoctorWorkTime $doctorWorkTime): self
+    {
+        if (!$this->doctorWorkTimes->contains($doctorWorkTime)) {
+            $this->doctorWorkTimes[] = $doctorWorkTime;
+            $doctorWorkTime->setFkSpecialist($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDoctorWorkTime(DoctorWorkTime $doctorWorkTime): self
+    {
+        if ($this->doctorWorkTimes->removeElement($doctorWorkTime)) {
+            // set the owning side to null (unless already changed)
+            if ($doctorWorkTime->getFkSpecialist() === $this) {
+                $doctorWorkTime->setFkSpecialist(null);
+            }
+        }
 
         return $this;
     }

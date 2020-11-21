@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Specialist;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\ORMException;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
@@ -49,6 +51,21 @@ class SpecialistRepository extends ServiceEntityRepository implements PasswordUp
     }
 
     /**
+     * @param string $username
+     * @return Specialist|null
+     * @throws NonUniqueResultException
+     */
+    public function findByEmail(string $username): ?Specialist
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.username = :username')
+            ->setParameter('username', $username)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
+
+    /**
      * @param $id
      * @return Query Returns an array of Specialists objects
      */
@@ -58,6 +75,16 @@ class SpecialistRepository extends ServiceEntityRepository implements PasswordUp
             ->setParameter('id', $id)
             ->getQuery();
 
+    }
+
+    /**
+     * @param Specialist $user
+     * @throws ORMException
+     */
+    public function save(Specialist $user): void
+    {
+        $this->_em->persist($user);
+        $this->_em->flush();
     }
 
     /**

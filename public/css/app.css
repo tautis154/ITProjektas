@@ -1,0 +1,1081 @@
+@import "~bootstrap/scss/bootstrap";
+
+// CSS for Background
+.bc-index {
+    background: url("/images/BCbackground.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+// Main page
+   html {
+       scroll-behavior: smooth;
+   }
+
+// Error Page
+   .error-image {
+       max-height: 100vh;
+       position: absolute;
+       left: 0;
+       right: 0;
+       margin: auto;
+   }
+
+.error-background {
+    background: #f8f9fb;
+    height: 100vh;
+    width: 100%;
+}
+
+// Alerts
+   .wrap > form:nth-child(2) > div:nth-child(1) > div:nth-child(3) > ul:nth-child(1),
+   .wrap > form:nth-child(2) > div:nth-child(2) > div:nth-child(3) > ul:nth-child(1) {
+       margin: auto;
+       list-style: none;
+       color: #9F0C0C;
+       text-align: center;
+   }
+
+.warning {
+    background: none;
+    border: none;
+}
+.alert-danger {
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    min-width: 300px;
+    top: 20px;
+}
+
+.alert-warning {
+    color: black;
+    text-align: center;
+}
+
+
+// Navbar_vertical
+   .bc-logo {
+       width: 150px;
+       height: 145px;
+       margin-left: 50px;
+       margin-top: 30px;
+   }
+
+.bc-item {
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 45px;
+    margin-right: 30px;
+}
+
+.bc-link,
+.bc-link2 {
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 1em 2em;
+    box-shadow: inset 0 0 0 3px #fea757;
+    color: #fea757;
+    font-size: inherit;
+    font-weight: 700;
+    position: relative;
+    float: right;
+}
+
+.bc-spec {
+    padding: 16px 40px;
+}
+
+.bc-link::before, .bc-link::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.bc-link {
+    transition: color 0.25s;
+}
+
+.bc-link::before, .bc-link::after {
+    border: 3px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.bc-link::before {
+    top: 0;
+    left: 0;
+}
+
+.bc-link::after {
+    bottom: 0;
+    right: 0;
+}
+
+.bc-link:hover {
+    color: #5185fa;
+}
+
+.bc-link:hover::before, .bc-link:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.bc-link:hover::before {
+    border-top-color: #5185fa;
+    border-right-color: #5185fa;
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+
+.bc-link:hover::after {
+    border-bottom-color: #5185fa;
+    border-left-color: #5185fa;
+    transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+
+
+// Navbar
+   .bc-logo2 {
+       width: 100px;
+       height: 100px;
+       margin-left: 50px;
+       margin-top: 30px;
+   }
+
+.bc-list2 {
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 45px;
+    margin-right: 30px;
+}
+
+.bc-list2 > li:nth-child(2) > button:nth-child(1) {
+    background: #fea757;
+    color: white;
+    margin-top: -65px;
+    margin-right: 190px;
+}
+
+.bc-spec {
+    padding: 16px 40px;
+}
+
+.bc-link2::before, .bc-link2::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.bc-link2 {
+    transition: color 0.25s;
+}
+
+.bc-link2::before, .bc-link2::after {
+    border: 3px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.bc-link2::before {
+    top: 0;
+    left: 0;
+}
+
+.bc-link2::after {
+    bottom: 0;
+    right: 0;
+}
+
+.bc-link2:hover {
+    color: #5185fa;
+}
+
+.bc-link2:hover::before, .bc-link2:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.bc-link2:hover::before {
+    border-top-color: #5185fa;
+    border-right-color: #5185fa;
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+
+.bc-link2:hover::after {
+    border-bottom-color: #5185fa;
+    border-left-color: #5185fa;
+    transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+
+
+// Search-bar (for index page)
+.search {
+    width: 600px;
+    display: flex;
+    top: 50%;
+}
+
+.wrap {
+    width: 60%;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 80px;
+    background: RGBA(255, 255, 255, 0.95);
+//margin-top: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#form_search {
+    float: left;
+    width: 20%;
+    border-radius: 4px;
+    border: none;
+    height: 35px;
+    transition: .4s;
+    color: white;
+    background: #5185fa;
+}
+
+#form_search:hover {
+    color: white;
+    border: none;
+    background: #fea757;;
+}
+
+#form_specialties {
+    float: left;
+    width: 25%;
+    height: 35px;
+    margin-right: 5px;
+    color: #4268bc;
+    font-size: 18px;
+    padding: 0;
+}
+
+#form_name,
+#form_city {
+    float: left;
+    width: 25%;
+    margin-right: 5px;
+    color: #4268bc;
+    font-size: 18px;
+}
+
+.search-header {
+    margin-bottom: 20px;
+    color: #2f5caf;
+}
+
+// About us
+   .about-us {
+       margin-top: 800px;
+       padding-bottom: 30px;
+       background: #fafafa;
+       height: 100%;
+       display: inline-block;
+   }
+
+.bc-reasons2,
+.bc-reasons1 {
+    float: left;
+    width: 49%;
+    background: #fafafa;
+}
+
+#section2 {
+    height: 100%;
+}
+
+.section2-circle {
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+    background: white;
+    position: absolute;
+    top: 90%;
+    left: 49%;
+}
+
+.section1-circle {
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+    background: #fafafa;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+}
+
+#backToTop {
+    visibility: hidden;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reason-header {
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 60px;
+}
+
+.patient-reason-header,
+.specialist-reason-header {
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.reason-paragraph {
+    text-align: center;
+    margin: 30px auto 0 auto;
+    max-width: 600px;
+}
+
+.patient-reason-image,
+.specialist-reason-image {
+    width: 40%;
+    display: inline;
+    padding-left: 55px;
+    padding-bottom: 40px;
+    padding-right: 30px;
+}
+
+.reason-text {
+    display: inline-block;
+    max-width: 350px;
+}
+
+.patient-reason-container {
+    border-right: 6px solid #fca85e;
+}
+
+// Results table display
+   .grid {
+       display: grid;
+       grid-template-columns: 15% 70% 15%;
+       align-items: stretch;
+   }
+
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-table {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 33px 30px;
+}
+
+.wrap-table {
+    width: 960px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    display: table;
+    margin: 0;
+}
+
+.results-row {
+    display: table-row;
+    background: #fff;
+}
+
+.results-row.header {
+    color: #ffffff;
+    background: #5185fa;
+}
+
+.cell {
+    display: table-cell;
+}
+
+.results-row .cell {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.2;
+    font-weight: unset !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.results-row.header .cell {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset !important;
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+
+.results-row .cell:nth-child(1) {
+    width: 360px;
+    padding-left: 40px;
+}
+
+.results-row .cell:nth-child(2) {
+    width: 160px;
+}
+
+.results-row .cell:nth-child(3) {
+    width: 250px;
+}
+
+.results-row .cell:nth-child(4) {
+    width: 190px;
+}
+
+.table, .results-row {
+    width: 100% !important;
+}
+
+.results-row:hover {
+    background-color: #e1eaff;
+    cursor: pointer;
+}
+
+.wrap-results-error {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 80px;
+    background: RGBA(255, 255, 255, 0.95);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.search-error-header {
+    color: #2f5caf;
+    text-align: center;
+}
+
+// Pagination
+   .container-table > nav:nth-child(2) {
+       transform: translate(-200%, 102%);
+   }
+
+.pagination {
+    justify-content: center;
+}
+
+// Registration
+   .registration-form {
+       background: white;
+       width: 400px;
+       position: absolute;
+       color: black;
+       padding: 30px;
+       left: 50%;
+       top: 50%;
+       transform: translate(-50%, -50%);
+       text-align: left;
+       border: 3px solid #196cba;
+       border-radius: 5px;
+   }
+
+.btn {
+    margin-top: 10px;
+    background: #5185fa;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #fea757;
+    color: white;
+}
+
+
+// Profiles
+   .profile-block {
+       width: 30%;
+       left: 20px;
+       border: 3px solid #196cba;
+       margin-left: 30px;
+       margin-top: 60px;
+       background: white;
+   }
+
+.user-heading > a:nth-child(1) > img:nth-child(1) {
+    width: 150px;
+    margin-top: 20px;
+}
+
+.btn-margin {
+    margin-bottom: 20px;
+}
+
+.panel > div:nth-child(1) > p:nth-child(4) {
+    width: 300px;
+}
+
+.panel > div:nth-child(1) {
+    max-width: 300px;
+}
+
+
+// Patient Profile
+   .show-more-times {
+       height: 30px;
+       text-align: right;
+   }
+
+.show-less-times {
+    height: 30px;
+}
+
+.bc-patient-container {
+    width: 90%;
+    background: RGBA(255, 255, 255, 0.95);
+    margin-top: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bc-patient-column-4 {
+    min-height: 500px;
+    text-align: center;
+}
+
+.bc-patient-column-8 {
+    padding-top: 25px;
+    padding-right: 40px;
+    padding-bottom: 25px;
+}
+
+.bc-patient-tab-header,
+.badge-info {
+    background: #5185fa;
+}
+
+.bc-patient-container .nav-tabs > li.active > a {
+    color: white;
+    font-size: 16px;
+}
+
+.bc-patient-container .nav-tabs > li > a {
+    color: white;
+}
+
+.bc-patient-container .tab-content > .active {
+    min-height: 240px;
+}
+
+.panel {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 10%);
+}
+
+
+//Specialist page
+  .specialist-work-hours {
+      border-right: 2px solid #b0a49f;
+      margin-left: 20px;
+      overflow-y: auto;
+      max-height: 300px;
+      min-width: 120px;
+  }
+
+.specialist-hours-row {
+    flex-wrap: nowrap;
+}
+
+.specialist-header {
+    margin-bottom: 20px;
+}
+
+.specialist-work-day {
+    margin-bottom: 0;
+}
+
+.specialist-row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.specialist-hours-error {
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+div.col-xl-2:nth-child(1) > div:nth-child(1),
+div.col-xl-2:nth-child(2) > div:nth-child(1),
+div.col-xl-2:nth-child(3) > div:nth-child(1),
+div.col-xl-2:nth-child(4) > div:nth-child(1),
+div.col-xl-2:nth-child(5) > div:nth-child(1) {
+    font-weight: bold;
+}
+
+.specialist-hours-input {
+    max-width: 120px;
+}
+
+.form-control::placeholder {
+    opacity: 0.6;
+}
+
+// Tables for doctor, clinic and patient
+.table > tbody > tr > td > button {
+       background: #74b3ee;
+       border: none;
+       padding: 5px 6px;
+   }
+
+.table > tbody > tr > td > button:hover {
+    background: #74b3ee;
+    border: none;
+}
+
+.table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(4) {
+    width: 180px;
+}
+
+#one, #two, #three, #four {
+    overflow: auto;
+    min-height: 50vh;
+}
+
+.edit-user-info {
+    align-content: center;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+
+// Patient Profile Edit
+   #user_info_name,
+   #user_info_surname,
+   #user_info_phoneNumber,
+   #user_info_personalEmail {
+       width: 50%;
+       color: #2f5caf;
+   }
+
+#user_info > div:nth-child(1) > label:nth-child(1) {
+    width: 25%;
+    margin-right: 20px;
+    color: #2f5caf;
+    margin-top: 20px;
+}
+
+#user_info > div:nth-child(2) > label:nth-child(1),
+#user_info > div:nth-child(3) > label:nth-child(1),
+#user_info > div:nth-child(4) > label:nth-child(1) {
+    width: 25%;
+    margin-right: 20px;
+    color: #2f5caf;
+}
+
+#user_info_dateOfBirth {
+    width: 50%;
+    transform: translate(58%, -110%);
+    color: #2f5caf;
+}
+
+#user_info > div:nth-child(5) > label:nth-child(1) {
+    width: 25%;
+    margin-right: 20px;
+    transform: translate(0%, 20%);
+    color: #2f5caf;
+}
+
+#user_info_city {
+    height: 32px;
+    width: 50%;
+    color: #2f5caf;
+    transform: translate(0%, -70%);
+}
+
+#user_info > div:nth-child(6) > label:nth-child(1) {
+    width: 25%;
+    margin-right: 20px;
+    transform: translate(0%, -110%);
+    color: #2f5caf;
+}
+
+#user_info_personCode {
+    width: 50%;
+    color: #2f5caf;
+    transform: translate(0%, -70%);
+}
+
+#user_info > div:nth-child(7) > label:nth-child(1) {
+    width: 25%;
+    margin-right: 20px;
+    transform: translate(0%, -100%);
+    color: #2f5caf;
+}
+
+#user_info_description {
+    height: 32px;
+    width: 50%;
+    color: #2f5caf;
+    transform: translate(0%, -70%);
+}
+
+#user_info > div:nth-child(8) > label:nth-child(1) {
+    width: 25%;
+    margin-right: 20px;
+    transform: translate(0%, -90%);
+    color: #2f5caf;
+}
+
+#user_info_save,
+#form_submit,
+#clinic_info_save {
+    float: right;
+    width: 20%;
+    border-radius: 4px;
+    border: none;
+    height: 35px;
+    transition: .4s;
+    color: white;
+    background: #5185fa;
+    min-width: 100px;
+    margin-top: 20px;
+}
+
+#user_info_save:hover {
+    color: white;
+    border: none;
+    background: #fea757;
+}
+
+h3.search-header:nth-child(3) {
+    margin-top: 50px;
+}
+
+// Clinic Profile Edit
+   #clinic_info > div:nth-child(1) > label:nth-child(1) {
+       width: 25%;
+       margin-right: 20px;
+       color: #2f5caf;
+       margin-top: 20px;
+   }
+
+#clinic_info > div:nth-child(2) > label:nth-child(1),
+#clinic_info > div:nth-child(3) > label:nth-child(1),
+#clinic_info > div:nth-child(4) > label:nth-child(1),
+#clinic_info > div:nth-child(5) > label:nth-child(1) {
+    width: 25%;
+    margin-right: 20px;
+    color: #2f5caf;
+}
+
+#clinic_info > div:nth-child(6) > label:nth-child(1) {
+    width: 25%;
+    margin-right: 20px;
+    color: #2f5caf;
+    margin-bottom: 60px;
+}
+
+#clinic_info_email,
+#clinic_info_phoneNumber,
+#clinic_info_webpage,
+#clinic_info_address,
+#clinic_info_name {
+    width: 50%;
+    color: #2f5caf;
+}
+
+#clinic_info_description {
+    height: 32px;
+    width: 50%;
+    color: #2f5caf;
+}
+
+#clinic_info_save:hover, #form_submit:hover {
+    color: white;
+    border: none;
+    background: #fea757;
+}
+
+
+// Registration page:
+   #registration_form_email,
+   #registration_form_plainPassword,
+   #registration_form_role {
+       width: 50%;
+       color: #2f5caf;
+   }
+
+.wrap > form:nth-child(2) > div:nth-child(1) > label:nth-child(1),
+.wrap > form:nth-child(2) > div:nth-child(2) > label:nth-child(1),
+.wrap > form:nth-child(2) > div:nth-child(3) > label:nth-child(1),
+.wrap > form:nth-child(2) > div:nth-child(5) > label:nth-child(1) {
+    width: 25%;
+    margin-right: 20px;
+    color: #2f5caf;
+}
+
+.wrap > form:nth-child(2) > div:nth-child(4) > label:nth-child(1) {
+    color: #2f5caf;
+    width: 25%;
+}
+
+#registration_form_agreeTerms {
+    margin-left: 40px;
+}
+
+
+// Login Page
+   .wrap > label:nth-child(2) {
+       width: 25%;
+       margin-right: 20px;
+       color: #2f5caf;
+       margin-top: 10px;
+   }
+
+.wrap > label:nth-child(4) {
+    width: 25%;
+    margin-right: 20px;
+    transform: translate(0%, -60%);
+    color: #2f5caf;
+}
+
+#inputPassword {
+    width: 50%;
+    color: #2f5caf;
+    transform: translate(50%, -150%);
+}
+
+#inputEmail {
+    width: 50%;
+    color: #2f5caf;
+    transform: translate(50%, -100%);
+}
+
+
+// Media queries
+@media screen and (max-width: 2000px) {
+    .container-table > nav:nth-child(2) {
+        margin-top: 10px;
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .bc-link {
+        background: white;
+    }
+
+    .search-term {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    #form_name {
+        width: 100%;
+        min-width: 200px;
+    }
+
+    #form_specialties, #form_search, #form_city {
+        width: 100%;
+        min-width: 200px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    .reason-text {
+        padding-left: 130px;
+        display: inline-block;
+        max-width: 400px;
+    }
+
+    .patient-reason-image, .specialist-reason-image {
+        width: 70%;
+        display: block;
+        padding-left: 125px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .table, .results-row, .cell {
+        display: block;
+    }
+
+    .results-row.header {
+        padding: 0;
+        height: 0;
+    }
+
+    .results-row.header .cell {
+        display: none;
+    }
+
+    .results-row .cell:before {
+        font-size: 12px;
+        color: #808080;
+        line-height: 1.2;
+        text-transform: uppercase;
+        font-weight: unset !important;
+        margin-bottom: 13px;
+        content: attr(data-title);
+        min-width: 98px;
+        display: block;
+    }
+
+    .page-back {
+        margin-top: 300px;
+    }
+    .page-forward {
+        float: right;
+        transform: translate(-20%, -230%);
+    }
+}
+
+@media (max-width: 768px) {
+    .results-row {
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 18px;
+        padding-top: 30px;
+        padding-right: 15px;
+        margin: 0;
+    }
+
+    .results-row .cell {
+        border: none;
+        padding-left: 30px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .results-row .cell:nth-child(1) {
+        padding-left: 30px;
+    }
+
+    .results-row .cell {
+        font-size: 18px;
+        color: #555555;
+        line-height: 1.2;
+        font-weight: unset !important;
+    }
+
+    .table, .results-row, .cell {
+        width: 100% !important;
+    }
+
+    #user_info > div:nth-child(7) > label:nth-child(1) {
+        transform: translate(0%, -30%);
+    }
+
+    #user_info_dateOfBirth {
+        transform: translate(70%, -80%);
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .patient-reason-container {
+        border-right: none;
+    }
+
+    .patient-reason-image {
+        width: 70%;
+        display: block;
+        padding-left: 125px;
+    }
+
+    .reason-text {
+        display: inline-block;
+        padding-left: 200px;
+        max-width: 500px;
+    }
+
+    .bc-reasons1 {
+        width: 100%;
+        float: none;
+    }
+
+    .bc-reasons2 {
+        width: 100%;
+    }
+
+    .patient-reason-image {
+        width: 90%;
+        padding-left: 10px;
+    }
+
+    .reason-text {
+        max-width: 700px;
+        font-size: 24px;
+    }
+
+    .specialist-reason-image {
+        width: 90%;
+        padding-left: 10px;
+    }
+
+    .reason-paragraph {
+        font-size: 24px;
+    }
+
+    .reason-header {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .bc-list2 > li:nth-child(2) > button:nth-child(1) {
+        position: relative;
+        margin-top: 2px;
+        min-width: 190px;
+        margin-right: 10px;
+    }
+
+    .bc-logo2 {
+        width: 150px;
+        height: 150px;
+        margin-left: 50px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .error-image {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    #form_name, #form_city, #form_specialties, #form_search, .search-header {
+        margin-left: -20px;
+    }
+
+    .wrap {
+        min-width: 359px;
+    }
+}
